@@ -72,6 +72,9 @@ Frontend/
  │   ├── routes/
  │   ├── services/
  │   └── utils/
+```
+
+---
 
 # Environment Variables
 
@@ -79,31 +82,47 @@ Backend .env
 DATABASE_URL="mysql://USER:PASSWORD@localhost:3306/employee_db"
 JWT_SECRET=your_secret_key
 PORT=5000
+---
 
-Frontend .env
+# Frontend .env
+
 VITE_API_URL=http://localhost:5000
 Installation
 
-Clone Repository
+---
+
+# Clone Repository
 git clone https://github.com/YOUR_USERNAME/employee-management-system.git
 
-Backend Setup
+---
+
+# Backend Setup
+
 cd Backend
 npm install
 npm run dev
 
-Frontend Setup
+---
+
+# Frontend Setup
+
 cd Frontend
 npm install
 npm run dev
 
-API Security
+---
+
+# API Security
+
 JWT Token Authentication
 Protected Routes
 Admin Authorization Middleware
 Password Hashing using bcrypt
 
-Future Improvements
+---
+
+# Future Improvements
+
 Docker Integration
 GitHub Actions CI/CD
 Unit Testing
@@ -115,9 +134,12 @@ Email Notifications
 Employee Attendance Module
 Leave Management System
 Payroll Module
-Learning Outcomes
 
-This project demonstrates:
+---
+
+# Learning Outcomes
+
+## This project demonstrates:
 
 Full Stack Development
 REST API Development
@@ -131,6 +153,6 @@ TypeScript Usage
 Git & GitHub Workflow
 
 
-Author
+# Author
 
 Yogeshwaran
