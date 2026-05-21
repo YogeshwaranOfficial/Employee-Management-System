@@ -78,20 +78,18 @@ Frontend/
 
 # Environment Variables
 
-Backend .env
+## Backend .env
+
 DATABASE_URL="mysql://USER:PASSWORD@localhost:3306/employee_db"
 JWT_SECRET=your_secret_key
 PORT=5000
----
 
-# Frontend .env
+## Frontend .env
 
 VITE_API_URL=http://localhost:5000
 Installation
 
----
-
-# Clone Repository
+## Clone Repository
 git clone https://github.com/YOUR_USERNAME/employee-management-system.git
 
 ---
