@@ -13,10 +13,16 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   })
 );
+
+
+app.get("/", (_req, res) => {
+  res.send("API Running");
+});
+
 app.use(express.json());
 
 // Routes
