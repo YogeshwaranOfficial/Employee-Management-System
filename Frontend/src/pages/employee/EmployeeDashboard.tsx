@@ -23,20 +23,31 @@ export default function EmployeeDashboard() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+useEffect(() => {
+  let mounted = true;
+
   const fetchProfile = async () => {
     try {
       const res = await api.get("/users/me");
-      setUser(res.data.data);
+
+      if (mounted) {
+        setUser(res.data.data);
+      }
     } catch (err) {
       console.error(err);
     } finally {
-      setLoading(false);
+      if (mounted) {
+        setLoading(false);
+      }
     }
   };
 
-  useEffect(() => {
-    fetchProfile();
-  }, []);
+  fetchProfile();
+
+  return () => {
+    mounted = false;
+  };
+}, []);
 
   const handleLogout = () => {
     removeToken();
