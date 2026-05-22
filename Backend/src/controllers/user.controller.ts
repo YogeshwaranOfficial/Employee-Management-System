@@ -3,13 +3,20 @@ import { createUserService,  getUsersService,  getProfileService,  updateUserSer
 
 export const createEmployee = async (req: Request, res: Response) => {
   try {
+    console.log("REQ FILE:", req.file);
     const file = req.file; 
     // const imageUrl = req.file?.path || "";
     const user = await createUserService(req.body, file); 
     res.status(201).json({ success: true, data: user });
   } catch (error: any) {
-    res.status(400).json({ message: error.message });
-  }
+  console.error("CREATE EMPLOYEE ERROR:", error);
+
+  res.status(400).json({
+    success: false,
+    message: error.message,
+    stack: error.stack,
+  });
+}
 };
 
 export const getUsers = async (req: Request, res: Response) => {
