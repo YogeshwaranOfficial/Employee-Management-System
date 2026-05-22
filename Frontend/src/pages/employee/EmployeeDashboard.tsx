@@ -93,7 +93,7 @@ export default function EmployeeDashboard() {
                           user.imageUrl
                             ? user.imageUrl.startsWith("http")
                               ? user.imageUrl
-                              : `http://localhost:5000/uploads/${user.imageUrl}`
+                              : `${import.meta.env.VITE_API_URL}/uploads/${user.imageUrl}`
                             : "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
                         }
                          className="w-10 h-10 rounded-full"
@@ -112,7 +112,7 @@ export default function EmployeeDashboard() {
                 user.imageUrl
                   ? user.imageUrl.startsWith("http")
                     ? user.imageUrl
-                    : `http://localhost:5000/uploads/${user.imageUrl}`
+                    : `${import.meta.env.VITE_API_URL}/uploads/${user.imageUrl}`
                   : "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
               }
                 className="w-36 h-36 rounded-full object-cover"

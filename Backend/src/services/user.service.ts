@@ -51,7 +51,7 @@ export const createUserService = async (
       password: hashedPassword,
       role,
 
-      imageUrl: file ? file.filename : data.imageUrl || null,
+      imageUrl: file ? file.path : data.imageUrl || null,
 
       phone: data.phone || null,
       dob: data.dob ? new Date(data.dob) : null,
@@ -193,7 +193,7 @@ export const updateUserService = async (
   }
   //  Image handling (FIXED)
   if (file) {
-    updateData.imageUrl = file.filename;
+    updateData.imageUrl = file.path;
   } else if (data.imageUrl !== undefined) {
     updateData.imageUrl = data.imageUrl;
   }
@@ -223,12 +223,12 @@ export const deleteUserService = async (id: number) => {
   }
 
   // 2. Delete image if exists
-  if (user.imageUrl) {
-    const filePath = path.join(__dirname, "../../uploads", user.imageUrl);
-    if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
-    }
-  }
+  // if (user.imageUrl) {
+  //   const filePath = path.join(__dirname, "../../uploads", user.imageUrl);
+  //   if (fs.existsSync(filePath)) {
+  //     fs.unlinkSync(filePath);
+  //   }
+  // }
 
   // 3. Delete user from DB
   return prisma.user.delete({

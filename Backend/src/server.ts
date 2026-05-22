@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { seedAdmin } from "./utils/seedAdmin";
-
+// import { Request, Response, NextFunction } from 'express';
 import authRoutes from "./routes/auth.routes";
 import userRoutes from "./routes/user.routes";
 
