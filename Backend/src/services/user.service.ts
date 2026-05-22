@@ -237,13 +237,13 @@ export const deleteUserService = async (id: number) => {
 };
 
 
-
 //employee id generation
 export const generateEmployeeId = async () => {
   const result: any = await prisma.$queryRaw`
-    SELECT MAX(CAST(RIGHT(employeeId, 3) AS INT)) as lastNumber
-    FROM [User]
-    WHERE role = 'EMPLOYEE'`;
+    SELECT MAX(CAST(RIGHT("employeeId", 3) AS INTEGER)) as "lastNumber"
+    FROM "User"
+    WHERE role = 'EMPLOYEE'
+  `;
 
   const lastNumber = result[0]?.lastNumber || 0;
 
