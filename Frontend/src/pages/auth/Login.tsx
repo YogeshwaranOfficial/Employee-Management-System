@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import api from "../../services/api";
 import { setToken } from "../../utils/token";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/useAuth";
 import { useNavigate } from "react-router-dom";
 import { User, Shield, Briefcase } from "lucide-react";
 import { ROUTES } from '../../constants/ROUTES';
@@ -36,10 +36,17 @@ import { ROUTES } from '../../constants/ROUTES';
       const { token, user } = res.data;
 
       setToken(token);
-      setUser(user);
-      localStorage.setItem("user", JSON.stringify(user));
+   
+      setToken(token);
 
-     if (user.role === "ADMIN") {
+      localStorage.setItem(
+        "user",
+        JSON.stringify(user)
+      );
+
+      setUser(user);
+
+      if (user.role === "ADMIN") {
         navigate(ROUTES.ADMIN);
       } else {
         navigate(ROUTES.EMPLOYEE);
