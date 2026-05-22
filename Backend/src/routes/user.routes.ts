@@ -15,7 +15,7 @@ router.get("/", verifyToken, isAdmin, getUsers);
 router.get("/me", verifyToken, getProfile);
 
 // Update user (Admin OR self)
-router.patch(  "/:id",  verifyToken,  updateUser);
+router.patch(  "/:id",  verifyToken,  uploadSingle,  updateUser);
 
 // Delete user (Admin only)
 router.delete("/:id", verifyToken, isAdmin, deleteUser);

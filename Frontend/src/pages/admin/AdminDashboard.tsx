@@ -301,11 +301,7 @@ const validate = (): ErrorType => {
     // CREATE
     if (!editingUser) {
       openConfirm("Are all the mentioned details correct?", async () => {
-        await api.post("/users", payload, {
-          headers: isFileUpload
-            ? { "Content-Type": "multipart/form-data" }
-            : undefined,
-        });
+        await api.post("/users", payload);
 
         setToast("Employee created successfully");
         setIsModalOpen(false);
@@ -318,11 +314,7 @@ const validate = (): ErrorType => {
     }
 
     // EDIT
-    await api.patch(`/users/${editingUser.id}`, payload, {
-      headers: isFileUpload
-        ? { "Content-Type": "multipart/form-data" }
-        : undefined,
-    });
+    await api.patch(`/users/${editingUser.id}`, payload);
 
     setToast("Employee updated successfully");
 
@@ -755,7 +747,7 @@ const validate = (): ErrorType => {
           <input
             readOnly
             className="w-full p-2 rounded-xl bg-gray-200 cursor-not-allowed outline-none select-none text-gray-700"
-            value={employeeId || "Generating..."}
+            value={employeeId || "Will assign by admin..."}
           />
 
         </div>
