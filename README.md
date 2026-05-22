@@ -12,11 +12,11 @@ The project demonstrates practical full-stack engineering concepts including RES
 
 ## Frontend (Vercel)
 
-[Employee Management System Frontend](https://employee-management-system-by-yogeshwaran.vercel.app/?utm_source=chatgpt.com)
+[Employee Management System Frontend](https://employee-management-system-by-yogeshwaran.vercel.app)
 
 ## Backend API (Render)
 
-[Employee Management System Backend API](https://employee-management-system-26sk.onrender.com?utm_source=chatgpt.com)
+[Employee Management System Backend API](https://employee-management-system-26sk.onrender.com)
 
 ---
 
