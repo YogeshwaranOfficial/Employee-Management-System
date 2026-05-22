@@ -3,8 +3,11 @@ import { createUserService,  getUsersService,  getProfileService,  updateUserSer
 
 export const createEmployee = async (req: Request, res: Response) => {
   try {
-    console.log("REQ FILE:", req.file);
-    const file = req.file; 
+    console.log("CREATE EMPLOYEE HIT");
+
+    const file = req.file;
+
+    console.log("FILE:", file);
     // const imageUrl = req.file?.path || "";
     const user = await createUserService(req.body, file); 
     res.status(201).json({ success: true, data: user });

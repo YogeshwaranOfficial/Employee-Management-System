@@ -4,10 +4,10 @@ import cloudinary from "../config/cloudinary";
 
 const storage = new CloudinaryStorage({
   cloudinary,
-  params: async () => ({
-    folder: "Employee Management System",
+  params: {
+    folder: "employee-management-system",
     allowed_formats: ["jpg", "png", "jpeg"],
-  }),
+  } as any,
 });
 
 const upload = multer({

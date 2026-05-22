@@ -36,8 +36,11 @@ app.get("/", (req, res) => {
 
 // Global error handler
 app.use((err: any, req: any, res: any, next: any) => {
+  console.error("GLOBAL ERROR:");
   console.error(err);
+
   res.status(500).json({
+    success: false,
     message: err.message || "Internal server error",
   });
 });
