@@ -391,11 +391,7 @@ const validate = (): ErrorType => {
                 <div className="flex sm:flex-col md:flex-col xl:flex-row gap-5 mt-5">
                   <div>
                     <img src={
-                          user.imageUrl
-                            ? user.imageUrl.startsWith("http")
-                              ? user.imageUrl
-                              : `${import.meta.env.VITE_API_URL}/uploads/${user.imageUrl}`
-                            : "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
+                         user.imageUrl || "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
                         }
                         className="w-40 h-70 rounded-lg m-4 object-cover shadow-2xl border-10 border-gray-300"
                       />
@@ -525,12 +521,9 @@ const validate = (): ErrorType => {
                 <div className="flex items-center gap-5">
 
                   <img
-                      src={
-                        selectedUser.imageUrl
-                          ? selectedUser.imageUrl.startsWith("http")
-                            ? selectedUser.imageUrl
-                            : `${import.meta.env.VITE_API_URL}/uploads/${selectedUser.imageUrl}`
-                          : "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
+                     src={
+                        selectedUser.imageUrl ||
+                        "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
                       }
                       className="w-30 h-30 rounded-full object-cover border-4 border-white shadow-md"
                     />

@@ -1,7 +1,7 @@
 import { prisma } from "../config/prisma";
 import bcrypt from "bcrypt";
-import fs from "fs";
-import path from "path";
+// import fs from "fs";
+// import path from "path";
 
 // Constants
 const VALID_ROLES = ["ADMIN", "EMPLOYEE"];
